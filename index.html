@@ -17,9 +17,10 @@ body { margin: 0; } img { max-width: 100%; } [hidden] { display: none !important
   --ink: #13201A;
   --muted: #56645D;
   --line: #D5DCD7;
-  --band: #13201A;
-  --band-fg: #EEF2EF;
-  --band-muted: #A6B3AC;
+  --band: #E2EAE4;
+  --band-fg: #13201A;
+  --band-muted: #4C5A53;
+  --accent-deep: #A66A00;
   --accent: #D9950F;
   --accent-ink: #13201A;
   --ok: #2F8A4C;
@@ -33,24 +34,8 @@ body { margin: 0; } img { max-width: 100%; } [hidden] { display: none !important
   --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   --wrap: 1120px;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0E1512; --sheet: #16201B; --ink: #E6ECE8; --muted: #9AA9A1; --line: #2A3730;
-    --band: #1B2822; --band-fg: #EEF2EF; --band-muted: #A6B3AC;
-    --accent: #F0B63A; --accent-ink: #13201A;
-    --ok: #5CC27C; --warn: #F0B63A; --bad: #EE7A66;
-    --ok-bg: #18301F; --warn-bg: #332810; --bad-bg: #3A1D18;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #0E1512; --sheet: #16201B; --ink: #E6ECE8; --muted: #9AA9A1; --line: #2A3730;
-  --band: #1B2822; --band-fg: #EEF2EF; --band-muted: #A6B3AC;
-  --accent: #F0B63A; --accent-ink: #13201A;
-  --ok: #5CC27C; --warn: #F0B63A; --bad: #EE7A66;
-  --ok-bg: #18301F; --warn-bg: #332810; --bad-bg: #3A1D18;
-  color-scheme: dark;
-}
+/* Light only: the site always shows the light palette, whatever the visitor's device theme. */
+:root, :root[data-theme="dark"] { color-scheme: light; }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 80px; }
@@ -131,7 +116,25 @@ section.block { padding-block: 88px; border-top: 1px solid var(--line); }
 .band .wrap { padding-block: 80px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: end; }
 @media (max-width: 860px) { .band .wrap { grid-template-columns: minmax(0, 1fr); gap: 24px; padding-block: 56px; } }
 .band h2 { font-size: clamp(2rem, 4.6vw, 3.4rem); }
-.band h2 em { font-style: normal; color: var(--accent); }
+.band h2 em { font-style: normal; color: var(--accent-deep); }
+
+/* Hero photo with the ranking board overlapping its lower edge */
+.hero-visual { min-width: 0; display: grid; }
+.hero-photo { display: block; width: calc(100% - 40px); margin-left: 40px; aspect-ratio: 5 / 4; object-fit: cover; border-radius: 14px; background: var(--line); }
+.hero-visual .board { position: relative; width: calc(100% - 40px); margin-top: -96px; }
+@media (max-width: 920px) {
+  .hero-photo { width: 100%; margin-left: 0; aspect-ratio: 4 / 3; }
+  .hero-visual .board { width: calc(100% - 24px); margin: -56px 0 0 12px; }
+}
+
+/* Photo strip */
+.photos .wrap { padding-block: 56px 72px; }
+.photo-row { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+@media (max-width: 860px) { .photo-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } .photo-row figure:first-child { grid-column: 1 / -1; } }
+@media (max-width: 520px) { .photo-row { grid-template-columns: minmax(0, 1fr); } }
+.photo-row figure { margin: 0; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.photo-row img { display: block; width: 100%; height: clamp(200px, 24vw, 280px); object-fit: cover; border-radius: 12px; background: var(--line); }
+.photo-row figcaption { display: grid; gap: 2px; font-weight: 600; }
 .band p { color: var(--band-muted); font-size: 1.15rem; max-width: 52ch; }
 .band .label { color: var(--band-muted); margin-bottom: 18px; display: block; }
 
@@ -240,7 +243,13 @@ details[open] summary::after { content: "–"; }
 details p { color: var(--muted); padding-top: 10px; max-width: 60ch; }
 
 /* Contact */
-.contact { background: var(--accent); color: var(--accent-ink); }
+.contact {
+  color: var(--accent-ink);
+  background-color: var(--accent);
+  background-image: linear-gradient(color-mix(in srgb, var(--accent) 86%, transparent), color-mix(in srgb, var(--accent) 86%, transparent)), url("https://images.unsplash.com/photo-1764391836704-8053c8a6e209?w=1600&q=60&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+}
 .contact .wrap { padding-block: 80px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 48px; align-items: end; }
 @media (max-width: 860px) { .contact .wrap { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 56px; } }
 .contact h2 { font-size: clamp(2rem, 5vw, 3.6rem); }
@@ -286,6 +295,8 @@ footer .wrap { padding-block: 28px; display: flex; justify-content: space-betwee
         </div>
       </div>
 
+      <div class="hero-visual">
+      <img class="hero-photo" src="https://images.unsplash.com/photo-1500898335608-a4b6696f81a5?w=1100&q=70&auto=format&fit=crop" alt="Café team preparing orders behind a busy counter" width="1100" height="880">
       <figure class="board" style="margin:0" aria-label="Illustrative outlet ranking">
         <div class="board-head">
           <strong>Pilot outlet ranking · Week 4</strong>
@@ -303,6 +314,7 @@ footer .wrap { padding-block: 28px; display: flex; justify-content: space-betwee
         </table>
         <figcaption class="board-foot"><span>Every outlet scored on the same numbers</span><span>Sales · ratings · audit · food cost · labour</span></figcaption>
       </figure>
+      </div>
     </div>
   </section>
 
@@ -315,6 +327,25 @@ footer .wrap { padding-block: 28px; display: flex; justify-content: space-betwee
       <p>Most consultants deliver a deck. We deliver a region that runs better. A Field Operations Lead from our team works full-time in your stores, and our senior team directs the work every week until the numbers move.</p>
     </div>
   </div>
+
+  <section class="photos" aria-label="In the stores">
+    <div class="wrap">
+      <div class="photo-row">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1719582777869-86ecb8015b57?w=1000&q=70&auto=format&fit=crop" alt="Crew working the counter of a bright café" loading="lazy">
+          <figcaption><span class="label">Front of house</span>A named lead on every shift</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1682988475893-12199f5e9240?w=800&q=70&auto=format&fit=crop" alt="Cook preparing food in a clean, well-organised kitchen" loading="lazy">
+          <figcaption><span class="label">Kitchen</span>Every station run to the SOP</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1503453776591-b4548af666a2?w=800&q=70&auto=format&fit=crop" alt="Gloved hands preparing food in a steel bowl" loading="lazy">
+          <figcaption><span class="label">Food safety</span>Hygiene checked every day</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
 
   <section class="block" id="approach">
     <div class="wrap">
@@ -554,7 +585,7 @@ footer .wrap { padding-block: 28px; display: flex; justify-content: space-betwee
 <footer>
   <div class="wrap">
     <span>© 2026 Project BM · Jakarta, Indonesia</span>
-    <span>projectbm.com</span>
+    <span>Photos from Unsplash · projectbm.com</span>
   </div>
 </footer>
 
