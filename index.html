@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Project BM</title>
+<title>Project BM · Store operations for F&amp;B and retail brands</title>
 <meta name="description" content="Project BM runs operations excellence pilots for multi-outlet F&B and retail brands in Indonesia.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -263,20 +263,27 @@ details p { color: var(--muted); padding-top: 10px; max-width: 60ch; }
 .copy:hover { background: var(--accent-ink); color: var(--accent); }
 
 footer .wrap { padding-block: 28px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; color: var(--muted); font-size: 0.88rem; }
+
+/* Landing page */
+.why { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 860px) { .why { grid-template-columns: minmax(0, 1fr); } }
+.why-item { padding-top: 20px; border-top: 1.5px solid var(--ink); display: grid; gap: 8px; align-content: start; }
+.why-item p { color: var(--muted); }
+.more { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.more span { color: var(--muted); }
+.hero-visual .hero-photo { margin-left: 40px; width: calc(100% - 40px); }
+@media (max-width: 920px) { .hero-visual .hero-photo { margin-left: 0; width: 100%; } }
 </style>
 </head>
 <body>
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="Project BM home"><span class="brand-mark">B<span>M</span></span>Project BM</a>
+    <a class="brand" href="/" aria-label="Project BM home"><span class="brand-mark">B<span>M</span></span>Project BM</a>
     <nav class="links" aria-label="Sections">
-      <a href="#approach">Approach</a>
-      <a href="#offers">Services</a>
-      <a href="#pilot">The pilot</a>
-      <a href="#results">Results</a>
-      <a href="#team">Team</a>
-      <a href="#faq">FAQ</a>
+      <a href="#problems">The problem</a>
+      <a href="#what">What we do</a>
+      <a href="/how-we-work">How we work</a>
     </nav>
     <a class="btn" href="#contact">Talk to us</a>
   </div>
@@ -286,34 +293,33 @@ footer .wrap { padding-block: 28px; display: flex; justify-content: space-betwee
   <section class="hero">
     <div class="wrap">
       <div class="hero-copy">
-        <span class="label">Operations excellence pilots · Indonesia</span>
-        <h1>We run your stores. <span class="mark">You see the results.</span></h1>
-        <p class="lede">Project BM is an operations team for multi-outlet food and retail brands. We take over operations in a group of your outlets, run them alongside your people with clear authority, and prove the gains in your own store numbers before you roll them out to the rest.</p>
+        <span class="label">For F&amp;B and retail brands with more than one store</span>
+        <h1>Your first store runs well. <span class="mark">Why doesn’t the tenth?</span></h1>
+        <p class="lede">Every new outlet stretches your standards a little further. Service slows, food cost creeps up, reviews slip, and your best people spend their days firefighting.</p>
         <div class="hero-actions">
-          <a class="btn accent" href="#contact">Start a conversation</a>
-          <a class="btn ghost" href="#pilot">See how the pilot works</a>
+          <a class="btn accent" href="#problems">See if this sounds familiar</a>
+          <a class="btn ghost" href="/how-we-work">How we work</a>
         </div>
       </div>
-
       <div class="hero-visual">
-      <img class="hero-photo" src="https://images.unsplash.com/photo-1500898335608-a4b6696f81a5?w=1100&q=70&auto=format&fit=crop" alt="Café team preparing orders behind a busy counter" width="1100" height="880">
-      <figure class="board" style="margin:0" aria-label="Illustrative outlet ranking">
-        <div class="board-head">
-          <strong>Pilot outlet ranking · Week 4</strong>
-          <span class="label">Illustrative</span>
-        </div>
-        <table>
-          <thead><tr><th>Outlet</th><th class="num">Rating</th><th class="num">Audit</th><th>Status</th></tr></thead>
-          <tbody>
-            <tr><td>Outlet A</td><td class="num">4.5</td><td class="num">92%</td><td><span class="pill g">Green</span></td></tr>
-            <tr><td>Outlet D</td><td class="num">4.1</td><td class="num">84%</td><td><span class="pill g">Green</span></td></tr>
-            <tr><td>Outlet B</td><td class="num">3.9</td><td class="num">78%</td><td><span class="pill a">Amber</span></td></tr>
-            <tr><td>Outlet E</td><td class="num">3.6</td><td class="num">70%</td><td><span class="pill a">Amber</span></td></tr>
-            <tr><td>Outlet C</td><td class="num">3.2</td><td class="num">61%</td><td><span class="pill r">Red</span></td></tr>
-          </tbody>
-        </table>
-        <figcaption class="board-foot"><span>Every outlet scored on the same numbers</span><span>Sales · ratings · audit · food cost · labour</span></figcaption>
-      </figure>
+        <img class="hero-photo" src="https://images.unsplash.com/photo-1500898335608-a4b6696f81a5?w=1100&q=70&auto=format&fit=crop" alt="Café team preparing orders behind a busy counter" width="1100" height="880">
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="problems">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="label">Sound familiar?</span>
+        <h2>The problems that grow with every store you open</h2>
+      </div>
+      <div class="issues">
+        <div class="issue"><h3>Every store does it differently</h3><p class="says">Each outlet has its own way of working, and nobody checks the same way twice.</p></div>
+        <div class="issue"><h3>Reviews are slipping</h3><p class="says">Slow service, wrong orders and a bad moment at the counter end up on Google and the delivery apps.</p></div>
+        <div class="issue"><h3>Food cost keeps creeping up</h3><p class="says">Portions drift, waste goes unrecorded, and margin disappears without anyone noticing.</p></div>
+        <div class="issue"><h3>Crew don’t match the rush</h3><p class="says">Too many people on shift when it’s quiet, too few at peak, and overtime keeps rising.</p></div>
+        <div class="issue"><h3>Good people leave</h3><p class="says">Crew and managers can’t see a path to grow, so your best ones walk out and take their know-how with them.</p></div>
+        <div class="issue"><h3>New stores open shaky</h3><p class="says">Every opening pulls your best people away, and the new store takes months to settle.</p></div>
       </div>
     </div>
   </section>
@@ -321,250 +327,49 @@ footer .wrap { padding-block: 28px; display: flex; justify-content: space-betwee
   <div class="band">
     <div class="wrap">
       <div>
-        <span class="label">Our promise</span>
-        <h2>We don’t hand you a report <em>and leave.</em></h2>
+        <span class="label">The root cause</span>
+        <h2>Most of these come from one gap: <em>nobody owns the standard in every store, every day.</em></h2>
       </div>
-      <p>Most consultants deliver a deck. We deliver a region that runs better. A Field Operations Lead from our team works full-time in your stores, and our senior team directs the work every week until the numbers move.</p>
+      <p>Head office writes the SOPs. Store managers are busy running shifts. In between, standards slowly slip. That gap is where Project BM works.</p>
     </div>
   </div>
 
-  <section class="photos" aria-label="In the stores">
+  <section class="block" id="what">
     <div class="wrap">
-      <div class="photo-row">
-        <figure>
-          <img src="https://images.unsplash.com/photo-1719582777869-86ecb8015b57?w=1000&q=70&auto=format&fit=crop" alt="Crew working the counter of a bright café" loading="lazy">
-          <figcaption><span class="label">Front of house</span>A named lead on every shift</figcaption>
-        </figure>
-        <figure>
-          <img src="https://images.unsplash.com/photo-1682988475893-12199f5e9240?w=800&q=70&auto=format&fit=crop" alt="Cook preparing food in a clean, well-organised kitchen" loading="lazy">
-          <figcaption><span class="label">Kitchen</span>Every station run to the SOP</figcaption>
-        </figure>
-        <figure>
-          <img src="https://images.unsplash.com/photo-1503453776591-b4548af666a2?w=800&q=70&auto=format&fit=crop" alt="Gloved hands preparing food in a steel bowl" loading="lazy">
-          <figcaption><span class="label">Food safety</span>Hygiene checked every day</figcaption>
-        </figure>
+      <div class="sec-head">
+        <span class="label">What Project BM is</span>
+        <h2>An operations team that runs it with you</h2>
+        <p class="lede">We are operators who have run large store networks. We step into a group of your outlets, run operations alongside your people with clear authority, and prove the gains in your own store numbers before you roll them out.</p>
+      </div>
+      <div class="why">
+        <div class="why-item"><h3>We run it, not just advise</h3><p>A Field Operations Lead from our team works full-time in your stores. You get results, not a report.</p></div>
+        <div class="why-item"><h3>Standards before sales</h3><p>Clean, safe, consistent stores protect your brand. Sales follow.</p></div>
+        <div class="why-item"><h3>Paid partly on results</h3><p>Part of our fee depends on hitting targets we agree with you before we start.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="block" id="approach">
+  <section class="block" id="start">
     <div class="wrap">
       <div class="sec-head">
-        <span class="label">What we usually find</span>
-        <h2>Great product, uneven store experience</h2>
-        <p class="lede">When we read customer reviews across a network, taste is rarely the complaint. Almost every problem is operational, and every one has a fix that can be written down, trained and checked.</p>
-      </div>
-      <div class="issues">
-        <div class="issue"><h3>Slow service</h3><p class="says">Long waits for a single order, even when the store is quiet.</p><p class="fix"><b>Fix</b>Crew scheduled to hourly traffic, with a speed target.</p></div>
-        <div class="issue"><h3>Cooking standards</h3><p class="says">Burnt or undercooked, cold food, dry buns.</p><p class="fix"><b>Fix</b>Cooking SOP backed by timers and line checks.</p></div>
-        <div class="issue"><h3>Crew attitude</h3><p class="says">Staff on phones or chatting at the counter.</p><p class="fix"><b>Fix</b>A named shift lead on the floor, plus soft-skills coaching.</p></div>
-        <div class="issue"><h3>Order accuracy</h3><p class="says">Missing sauces, drinks or items. Wrong orders.</p><p class="fix"><b>Fix</b>Packing checklist and a handover check.</p></div>
-        <div class="issue"><h3>Hygiene</h3><p class="says">Dirty floors, bare hands, tired frying oil.</p><p class="fix"><b>Fix</b>Daily cleaning checklist and an oil-change log.</p></div>
-        <div class="issue"><h3>Honest hours</h3><p class="says">“Open 24 hours” on the listing, closed at the door.</p><p class="fix"><b>Fix</b>Listed hours that match real staffing, on every app.</p></div>
-      </div>
-      <p class="note">A single bad experience can go viral and reach every outlet’s customers. That is why we put standards before sales: clean, safe, well-run stores protect the brand, and sales follow.</p>
-    </div>
-  </section>
-
-  <section class="block" id="workstreams">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="label">What we fix</span>
-        <h2>Six workstreams, one standard</h2>
-        <p class="lede">Most issues share one root cause: there is no single standard that every store, shift and level works to. We build that standard and make it stick.</p>
-      </div>
-      <div class="streams">
-        <div class="stream"><span class="n">01</span><h3>Quality &amp; audit</h3><p>One QA standard, audit form and schedule for every store, company-owned and franchise alike, run by calibrated auditors.</p></div>
-        <div class="stream"><span class="n">02</span><h3>One standard</h3><p>One SOP library, short and visual, written in Bahasa. One weekly report that every store fills in the same way.</p></div>
-        <div class="stream"><span class="n">03</span><h3>Labour &amp; scheduling</h3><p>Crew rostered to hourly traffic, overtime under control, and sales per labour hour tracked for every store.</p></div>
-        <div class="stream"><span class="n">04</span><h3>Food cost &amp; waste</h3><p>Recipe costing, portion control, regular stock counts and waste logs, so actual food cost matches what the menu was priced on.</p></div>
-        <div class="stream"><span class="n">05</span><h3>Training &amp; coaching</h3><p>A coaching cascade where each level coaches the one below, plus role-based leadership and business modules from our Academy.</p></div>
-        <div class="stream"><span class="n">06</span><h3>New store openings</h3><p>An opening playbook: handover checklist, crew hired and trained before day one, and close support through the first 90 days.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="offers">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="label">Ways to work with us</span>
-        <h2>Start with a health check, or go straight to a pilot</h2>
+        <span class="label">Two ways to start</span>
+        <h2>For a handful of stores or a national chain</h2>
       </div>
       <div class="offers">
         <article class="offer">
           <span class="tag">4 WEEKS</span>
           <h3>Store Health Check</h3>
-          <p class="muted">A fixed-scope look at how your stores really run. It suits any size of brand and is the first step of every pilot.</p>
-          <ul>
-            <li>A visit to every store, company-owned and franchise</li>
-            <li>Review of your SOPs, reports, audits and sales data</li>
-            <li>Analysis of customer reviews and delivery-app ratings</li>
-            <li>An outlet ranking that shows which stores need help first</li>
-            <li>A gap list and a 30-day quick-win plan</li>
-          </ul>
-          <p class="foot">You keep the ranking and the plan, whether or not we continue.</p>
+          <p class="muted">We visit every store, read your numbers and reviews, and show you which outlets need help first, with a 30-day quick-win plan.</p>
         </article>
         <article class="offer main">
           <span class="tag">6 MONTHS</span>
           <h3>Operations Pilot</h3>
-          <p class="muted">We run operations in a group of your outlets with clear authority, then hand you the results and a playbook.</p>
-          <ul>
-            <li>A full-time Field Operations Lead in your stores</li>
-            <li>One QA standard, SOP library and audit</li>
-            <li>Academy classes and a coaching cascade</li>
-            <li>Weekly updates and monthly results reviews</li>
-            <li>Part of our fee tied to agreed KPIs</li>
-          </ul>
-          <p class="foot">Ends with an operations playbook and a rollout proposal.</p>
+          <p class="muted">We run operations in a group of your outlets, fix and train, then hand you the results and a playbook to roll out.</p>
         </article>
       </div>
-    </div>
-  </section>
-
-  <section class="block" id="pilot">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="label">The pilot</span>
-        <h2>Prove it in a few stores, then scale</h2>
-        <p class="lede">We take over operations in a group of outlets: a handful of stores for a growing brand, or one region for a large chain. Results are measured against your own baseline and, where you have enough stores, a similar comparison group over the same months, so seasonality and promotions don’t distort them.</p>
-      </div>
-      <div class="track" aria-hidden="true"><i></i></div>
-      <div class="timeline">
-        <div class="phase"><span class="when">FIRST 4 WEEKS</span><h3>Health check</h3><ul><li>SOPs, reports, audits and history collected</li><li>Company and franchise stores visited</li><li>Baselines and targets agreed</li></ul></div>
-        <div class="phase"><span class="when">MONTH 1</span><h3>Set up</h3><ul><li>Outlet ranking live</li><li>Quick wins in every store</li><li>One QA standard and SOP set</li></ul></div>
-        <div class="phase"><span class="when">MONTHS 2–5</span><h3>Fix and train</h3><ul><li>Academy classes</li><li>Coaching cascade running</li><li>Auditors calibrated</li><li>Weekly reviews with you</li></ul></div>
-        <div class="phase end"><span class="when">MONTH 6</span><h3>Prove and plan</h3><ul><li>Results against your baseline</li><li>An operations playbook</li><li>A rollout proposal</li></ul></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="results">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="label">How we measure success</span>
-        <h2>Standards first, then results. Part of our fee depends on them.</h2>
-      </div>
-      <div class="score">
-        <div style="display:grid; gap:20px; min-width:0">
-          <div class="gate">
-            <span class="label">The gate</span>
-            <h3>Food safety and hygiene come before any other result</h3>
-            <p style="color:var(--muted)">Stores must pass an agreed hygiene and food safety standard before other results count. Serious failures are fixed straight away.</p>
-          </div>
-          <p style="color:var(--muted)">We agree the scorecard with you before we start. The measures and their weighting depend on your business and what matters most to you. Our fee is a monthly retainer plus a result fee that is paid only when agreed targets are met.</p>
-          <div class="paid" style="margin-top:0">
-            <div class="tier"><b>Baseline</b><span>Measured during the Health Check</span></div>
-            <div class="tier"><b>Targets</b><span>Agreed with you and signed off</span></div>
-            <div class="tier"><b>Review</b><span>Progress shared every month</span></div>
-          </div>
-        </div>
-        <div style="display:grid; gap:20px; min-width:0">
-          <span class="label">What a scorecard usually covers</span>
-          <div class="rows">
-            <div class="row"><span class="k">STANDARDS</span><div class="v"><b>Store audit score</b><span>How closely each store follows the SOPs, checked on the same form for every store.</span></div></div>
-            <div class="row"><span class="k">CUSTOMERS</span><div class="v"><b>Ratings and complaints</b><span>Google and delivery-app ratings, complaint volume and response time.</span></div></div>
-            <div class="row"><span class="k">SPEED</span><div class="v"><b>Service and accuracy</b><span>Order times, wrong or missing items, delivery-app cancellations.</span></div></div>
-            <div class="row"><span class="k">PEOPLE</span><div class="v"><b>Training and retention</b><span>Staff trained to standard, turnover, managers developed from within.</span></div></div>
-            <div class="row"><span class="k">PROFIT</span><div class="v"><b>Store economics</b><span>Food cost, labour cost and store margin against the baseline.</span></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="how">
-    <div class="wrap">
-      <div class="two">
-        <div>
-          <span class="label">Operating routine</span>
-          <h2>A routine you can count on</h2>
-          <div class="rows">
-            <div class="row"><span class="k">DAILY</span><div class="v"><b>Store visits and checks</b><span>Issues logged and fixed on the spot.</span></div></div>
-            <div class="row"><span class="k">WEEKLY</span><div class="v"><b>Store managers’ meeting and written update</b><span>What improved, what didn’t, and what needs your decision.</span></div></div>
-            <div class="row"><span class="k">FORTNIGHTLY</span><div class="v"><b>Steering meeting</b><span>Your sponsor and our senior team make shared decisions.</span></div></div>
-            <div class="row"><span class="k">MONTHLY</span><div class="v"><b>Results review</b><span>Outlet ranking against the baseline and comparison stores.</span></div></div>
-          </div>
-        </div>
-        <div>
-          <span class="label">Who decides what</span>
-          <h2>Clear authority, agreed before day one</h2>
-          <div class="rows">
-            <div class="row"><span class="k us">WE DECIDE</span><div class="v"><b>Day-to-day operations in the pilot outlets</b><span>Store visit schedule, meeting rhythm, training content, process fixes.</span></div></div>
-            <div class="row"><span class="k both">WITH YOU</span><div class="v"><b>People moves and extra spend</b><span>We bring a recommendation. You make the final call.</span></div></div>
-            <div class="row"><span class="k you">YOURS</span><div class="v"><b>Brand, strategy, expansion, financing</b><span>Your call. We give input when asked.</span></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="donts">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="label">What we don’t do</span>
-        <h2>We strengthen your team, not replace it</h2>
-      </div>
-      <div class="donts">
-        <div class="dont"><h3>Run your finances</h3><p>Finance stays with your team.</p></div>
-        <div class="dont"><h3>Set your brand</h3><p>Brand and strategy remain your call.</p></div>
-        <div class="dont"><h3>Replace managers</h3><p>We work alongside your area and store managers, not around them.</p></div>
-        <div class="dont"><h3>Stay forever</h3><p>The pilot has a fixed end point, with a clear handover to your team.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="team">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="label">The team</span>
-        <h2>Operators, not just advisors</h2>
-        <p class="lede">We have run large store networks ourselves. Running stores well works the same way across formats.</p>
-      </div>
-      <!-- TEAM: each <article class="person"> below is one card. Copy one to add a role, delete one to remove it. The grid adjusts on its own. -->
-      <div class="team">
-        <article class="person">
-          <div class="avatar">OD</div>
-          <h3>Operations Director</h3>
-          <span class="role">Directs every engagement</span>
-          <p>20+ years in Southeast Asian retail across F&amp;B, fashion, luxury, consumer technology and home furnishing, including running a 230-store coffee network.</p>
-          <div class="facts"><span>Retail operations</span><span>Financial analysis</span><span>Store expansion</span></div>
-        </article>
-        <article class="person">
-          <div class="avatar">PL</div>
-          <h3>People &amp; Learning Lead</h3>
-          <span class="role">Standards, coaching and the Academy</span>
-          <p>10+ years in retail, across fashion and food &amp; beverage. Builds the processes, coaching and training programmes that keep standards in place after we leave.</p>
-          <div class="facts"><span>Business process</span><span>People management</span><span>Learning &amp; development</span></div>
-        </article>
-        <article class="person">
-          <div class="avatar">FL</div>
-          <h3>Field Operations Lead</h3>
-          <span class="role">Full-time in your stores</span>
-          <p>10–15 years in F&amp;B operations with established brands. Runs day-to-day operations in the pilot outlets and reports to your management every week.</p>
-          <div class="facts"><span>Staffing to traffic</span><span>SOP enforcement</span><span>Store turnarounds</span></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="faq">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="label">Questions you may have</span>
-        <h2>Straight answers</h2>
-      </div>
-      <div class="faq">
-        <div>
-          <details><summary>We only have a few stores. Is this for us?</summary><p>Yes. For a growing brand the pilot can cover your whole network, and the 4-week Health Check is a low-risk way to start.</p></details>
-          <details><summary>How much of your time do we get?</summary><p>The Field Operations Lead works full-time in your pilot stores. Our senior team directs the work, visits your stores in person every month, and joins every steering meeting.</p></details>
-          <details><summary>Can you fire people?</summary><p>No. We recommend, and you make the final call on any people decision.</p></details>
-          <details><summary>Do you need experience in our exact format?</summary><p>Running stores well works the same across formats: staffing to traffic, one standard, checked every day. Our track record running large store networks shows it.</p></details>
-        </div>
-        <div>
-          <details><summary>What happens after the pilot?</summary><p>You choose. Hire a permanent head of operations with our help on recruiting and handover, or extend the model to more stores while you decide.</p></details>
-          <details><summary>Can we stop early?</summary><p>Yes. Either side may exit after Month 3 with 30 days’ notice.</p></details>
-          <details><summary>What do you need from us?</summary><p>Access to sales, operations and audit data, one sponsor on your management team, a fortnightly steering meeting, and brand backing with franchise partners in the pilot.</p></details>
-        </div>
+      <div class="more">
+        <a class="btn" href="/how-we-work">See how we work in detail</a>
+        <span>Our approach, the pilot timeline, how we measure results, and the team.</span>
       </div>
     </div>
   </section>
